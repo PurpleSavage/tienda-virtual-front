@@ -1,0 +1,58 @@
+{
+    "ropa":[
+        {
+            "id":"abc-123",
+            "nombre":"vestido",
+            "descripcion":"vestido veraniego con diseño de flores",
+            "talla":32,
+            "typeBody":"lower",
+            "precio":10,
+            "url":"https://firebasestorage.googleapis.com/v0/b/tienda-virtual-e1045.appspot.com/o/fullbody%2Fvestido-mujer-verano-fuxxia.jpg?alt=media&token=e095b13e-eca7-4293-ae82-aafa14dc3d45"
+        },
+        {
+            "id":"abc-124",
+            "nombre":"vestido",
+            "descripcion":"vestido veraniego con diseño de flores",
+            "talla":32,
+            "typeBody":"lower",
+            "precio":10,
+            "url":"https://firebasestorage.googleapis.com/v0/b/tienda-virtual-e1045.appspot.com/o/fullbody%2Fvestido-mujer-verano-fuxxia.jpg?alt=media&token=e095b13e-eca7-4293-ae82-aafa14dc3d45"
+        },
+        {
+            "id":"abc-125",
+            "nombre":"blusa",
+            "descripcion":"vestido veraniego con diseño de flores",
+            "talla":32,
+            "typeBody":"body",
+            "precio":10,
+            "url":"https://firebasestorage.googleapis.com/v0/b/tienda-virtual-e1045.appspot.com/o/body%2Fblusa-2.webp?alt=media&token=1a2093c2-5d79-4ffd-914d-1d255c432d24"
+        },
+        {
+            "id":"abc-126",
+            "nombre":"blusa+",
+            "descripcion":"vestido veraniego con diseño de flores",
+            "talla":32,
+            "typeBody":"body",
+            "precio":10,
+            "url":"https://firebasestorage.googleapis.com/v0/b/tienda-virtual-e1045.appspot.com/o/body%2Fblusa.webp?alt=media&token=fc025409-51cc-46cd-93c1-ea08dc4a70a8"
+        },
+        {
+            "id":"abc-127",
+            "nombre":"vestido",
+            "descripcion":"vestido veraniego con diseño de flores",
+            "talla":32,
+            "typeBody":"full",
+            "precio":10,
+            "url":"https://firebasestorage.googleapis.com/v0/b/tienda-virtual-e1045.appspot.com/o/fullbody%2Fvestido-mujer-verano-fuxxia.jpg?alt=media&token=e095b13e-eca7-4293-ae82-aafa14dc3d45"
+        },
+        {
+            "id":"abc-128",
+            "nombre":"vestido",
+            "descripcion":"vestido veraniego con diseño de flores",
+            "talla":32,
+            "typeBody":"full",
+            "precio":10,
+            "url":"https://firebasestorage.googleapis.com/v0/b/tienda-virtual-e1045.appspot.com/o/fullbody%2Fvestido-mujer-verano-fuxxia.jpg?alt=media&token=e095b13e-eca7-4293-ae82-aafa14dc3d45"
+        }
+    ]
+}
