@@ -10,9 +10,10 @@ const ClothingProvider:React.FC<ClothingProviderProps> = ({children}) => {
     const [closeMenu,setCloseMenu]=useState(false)
     const [listCart,setListCart]=useState<Clothing[]>([])
     const [msg,setMsg]=useState<MessageAlert>({ state: false, body: '' })
+
     const getAllClothing= async()=>{
         try {
-            const respuesta = await fetch("http://localhost:3000/ropa")
+            const respuesta = await fetch("http://localhost:4000/api/clothing/all")
             const data = await respuesta.json()
             setRopa(data)
         } catch (error) {
@@ -21,7 +22,7 @@ const ClothingProvider:React.FC<ClothingProviderProps> = ({children}) => {
     }
     const getAllFullBody =async()=>{
         try {
-            const respuesta = await fetch("http://localhost:3000/ropa")
+            const respuesta = await fetch("http://localhost:4000/api/clothing/all")
             const data:Clothing[] = await respuesta.json()
             const dataFiltered = data.filter((item)=>item.typeBody==="full")
             setRopa(dataFiltered )
@@ -32,7 +33,7 @@ const ClothingProvider:React.FC<ClothingProviderProps> = ({children}) => {
     }
     const getAllLower =async()=>{
         try {
-            const respuesta = await fetch("http://localhost:3000/ropa")
+            const respuesta = await fetch("http://localhost:4000/api/clothing/all")
             const data:Clothing[] = await respuesta.json()
             const dataFiltered = data.filter((item)=>item.typeBody==="lower")
             setRopa(dataFiltered )
@@ -43,7 +44,7 @@ const ClothingProvider:React.FC<ClothingProviderProps> = ({children}) => {
     }
     const getAllUpper =async()=>{
         try {
-            const respuesta = await fetch("http://localhost:3000/ropa")
+            const respuesta = await fetch("http://localhost:4000/api/clothing/all")
             const data:Clothing[] = await respuesta.json()
             const dataFiltered = data.filter((item)=>item.typeBody==="body")
             setRopa(dataFiltered )
@@ -54,7 +55,7 @@ const ClothingProvider:React.FC<ClothingProviderProps> = ({children}) => {
     }
     const clothingCart =(steel:Clothing)=>{
         try {
-            const objEncontraddo= listCart.find(obj=>obj.id===steel.id)
+            const objEncontraddo= listCart.find(obj=>obj._id===steel._id)
             if(objEncontraddo){
                 const message:MessageAlert={
                     state:true,
@@ -67,7 +68,9 @@ const ClothingProvider:React.FC<ClothingProviderProps> = ({children}) => {
                 position:"bottom-right",
                 duration:2000
             });
-            setListCart([...listCart,steel])   
+            setListCart([...listCart,steel])
+            
+              
         } catch (error) {
             console.log(error)
         }   
@@ -78,6 +81,25 @@ const ClothingProvider:React.FC<ClothingProviderProps> = ({children}) => {
             body:""
         }
         setMsg(message)
+    }
+    const removeToCart =(id:string)=>{
+        const newListCart = listCart.filter(item=>item._id !== id)
+        setListCart(newListCart)
+    }
+    const gotToWsp=(total:number)=>{
+        const phoneNumber = '51933514891'; // Reemplaza con tu número de teléfono
+        const detalleProductos = listCart.map(producto => 
+            `${producto.nombre}: ${producto.descripcion} - Precio: ${producto.precio}`
+        ).join('\n');
+    
+        const defaultMessage = `
+            Hola, me gustaría obtener los siguientes productos:
+            ${detalleProductos}
+            Costo total: ${total}
+            N° artículos: ${listCart.length}
+        `;
+        const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(defaultMessage)}`;
+        window.open(whatsappUrl, '_blank');
     }
   return (
     <ClothingContext.Provider
@@ -92,7 +114,9 @@ const ClothingProvider:React.FC<ClothingProviderProps> = ({children}) => {
             clothingCart,
             listCart,
             msg,
-            closeModal
+            closeModal,
+            removeToCart,
+            gotToWsp
         }}
     >
         {children}

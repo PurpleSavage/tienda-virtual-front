@@ -104,7 +104,7 @@ const IndexLayout=() => {
             </nav>
         </div>
         <h2 className="text-2xl w-4/5 mx-auto my-10 px-8">Section: {pathname==="/"? "All":titleSection }</h2>
-        <section className=" mt-8 w-full md:w-2/3 mx-auto flex flex-wrap j  justify-center gap-10 p-4 pb-10">
+        <section className=" mt-8 w-full md:w-2/3 mx-auto flex flex-col md:flex-row flex-wrap items-center justify-center gap-10 p-4 pb-10">
             {
                 pathname==="/"?
                     <All/>

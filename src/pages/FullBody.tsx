@@ -15,7 +15,7 @@ const FullBody = () => {
         ropa.map((steel)=>(
           <CardsClothing
               steel={steel}
-              key={steel.id}
+              key={steel._id}
           />
       )):<p>Aún no hay resultados en esta sección</p>
       }

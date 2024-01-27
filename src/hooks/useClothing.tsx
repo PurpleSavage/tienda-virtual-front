@@ -1,7 +1,11 @@
 import {  useContext} from "react";
 import ClothingContext from "../providers/ClothingProvider";
 const useClothing = () => {
-  return useContext(ClothingContext)
+  const context =useContext(ClothingContext)
+  if(context === undefined || context ===null){
+    throw new Error ("useThemeContext muse be used within a ThemeContextProvider")
+  }
+  return context
 }
 
 export default useClothing

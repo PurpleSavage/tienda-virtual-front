@@ -1,13 +1,19 @@
 export interface ClothingProviderProps {
     children: ReactNode;
 }
+export type urlObjectTypes ={
+    _id?:string
+    vew:vewClothingType
+    url:string,
+    nameFile?:string
+}
 export interface Clothing{
-    id:string,
+    _id:string,
     nombre:string,
     descripcion:string,
     talla:number,
     precio: number,
-    url:strinng,
+    images:urlObjectTypes[]  ,
     typeBody:"full"|"body"|"lower"
 }
 
@@ -22,7 +28,9 @@ export interface ClothingContextProps {
     setCloseMenu:React.Dispatch<React.SetStateAction<boolean>>,
     listCart:Clothing[],
     msg:MessageAlert,
-    closeModal:()=>void
+    closeModal:()=>void,
+    removeToCart:(id:string)=>void,
+    gotToWsp:(total:number)=>void
 }
 export interface ClothingFilter{
     count:number
