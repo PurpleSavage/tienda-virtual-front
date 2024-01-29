@@ -13,7 +13,7 @@ const ClothingProvider:React.FC<ClothingProviderProps> = ({children}) => {
 
     const getAllClothing= async()=>{
         try {
-            const respuesta = await fetch("http://localhost:4000/api/clothing/all")
+            const respuesta = await fetch(`${import.meta.env.VITE_FRONTEND_URL}/clothing/all`)
             const data = await respuesta.json()
             setRopa(data)
         } catch (error) {
@@ -22,7 +22,7 @@ const ClothingProvider:React.FC<ClothingProviderProps> = ({children}) => {
     }
     const getAllFullBody =async()=>{
         try {
-            const respuesta = await fetch("http://localhost:4000/api/clothing/all")
+            const respuesta = await fetch(`${import.meta.env.VITE_FRONTEND_URL}/clothing/all`)
             const data:Clothing[] = await respuesta.json()
             const dataFiltered = data.filter((item)=>item.typeBody==="full")
             setRopa(dataFiltered )
@@ -33,7 +33,7 @@ const ClothingProvider:React.FC<ClothingProviderProps> = ({children}) => {
     }
     const getAllLower =async()=>{
         try {
-            const respuesta = await fetch("http://localhost:4000/api/clothing/all")
+            const respuesta = await fetch(`${import.meta.env.VITE_FRONTEND_URL}/clothing/all`)
             const data:Clothing[] = await respuesta.json()
             const dataFiltered = data.filter((item)=>item.typeBody==="lower")
             setRopa(dataFiltered )
@@ -44,7 +44,7 @@ const ClothingProvider:React.FC<ClothingProviderProps> = ({children}) => {
     }
     const getAllUpper =async()=>{
         try {
-            const respuesta = await fetch("http://localhost:4000/api/clothing/all")
+            const respuesta = await fetch(`${import.meta.env.VITE_FRONTEND_URL}/clothing/all`)
             const data:Clothing[] = await respuesta.json()
             const dataFiltered = data.filter((item)=>item.typeBody==="body")
             setRopa(dataFiltered )
@@ -87,7 +87,6 @@ const ClothingProvider:React.FC<ClothingProviderProps> = ({children}) => {
         setListCart(newListCart)
     }
     const gotToWsp=(total:number)=>{
-        const phoneNumber = '51933514891'; // Reemplaza con tu número de teléfono
         const detalleProductos = listCart.map(producto => 
             `${producto.nombre}: ${producto.descripcion} - Precio: ${producto.precio}`
         ).join('\n');
@@ -98,7 +97,7 @@ const ClothingProvider:React.FC<ClothingProviderProps> = ({children}) => {
             Costo total: ${total}
             N° artículos: ${listCart.length}
         `;
-        const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(defaultMessage)}`;
+        const whatsappUrl = `https://wa.me/${import.meta.env.VITE_PHONE}?text=${encodeURIComponent(defaultMessage)}`;
         window.open(whatsappUrl, '_blank');
     }
   return (
