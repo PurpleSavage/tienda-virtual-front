@@ -13,7 +13,7 @@ const ClothingProvider:React.FC<ClothingProviderProps> = ({children}) => {
 
     const getAllClothing= async()=>{
         try {
-            const respuesta = await fetch(`${import.meta.env.VITE_FRONTEND_URL}/clothing/all`)
+            const respuesta = await fetch(`${import.meta.env.VITE_URL_BACKEND}/clothing/all`)
             const data = await respuesta.json()
             setRopa(data)
         } catch (error) {
@@ -22,7 +22,7 @@ const ClothingProvider:React.FC<ClothingProviderProps> = ({children}) => {
     }
     const getAllFullBody =async()=>{
         try {
-            const respuesta = await fetch(`${import.meta.env.VITE_FRONTEND_URL}/clothing/all`)
+            const respuesta = await fetch(`${import.meta.env.VITE_URL_BACKEND}/clothing/all`)
             const data:Clothing[] = await respuesta.json()
             const dataFiltered = data.filter((item)=>item.typeBody==="full")
             setRopa(dataFiltered )
@@ -33,7 +33,7 @@ const ClothingProvider:React.FC<ClothingProviderProps> = ({children}) => {
     }
     const getAllLower =async()=>{
         try {
-            const respuesta = await fetch(`${import.meta.env.VITE_FRONTEND_URL}/clothing/all`)
+            const respuesta = await fetch(`${import.meta.env.VITE_URL_BACKEND}/clothing/all`)
             const data:Clothing[] = await respuesta.json()
             const dataFiltered = data.filter((item)=>item.typeBody==="lower")
             setRopa(dataFiltered )
@@ -44,7 +44,7 @@ const ClothingProvider:React.FC<ClothingProviderProps> = ({children}) => {
     }
     const getAllUpper =async()=>{
         try {
-            const respuesta = await fetch(`${import.meta.env.VITE_FRONTEND_URL}/clothing/all`)
+            const respuesta = await fetch(`${import.meta.env.VITE_URL_BACKEND}/clothing/all`)
             const data:Clothing[] = await respuesta.json()
             const dataFiltered = data.filter((item)=>item.typeBody==="body")
             setRopa(dataFiltered )
