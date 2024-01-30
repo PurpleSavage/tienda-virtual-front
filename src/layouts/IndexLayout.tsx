@@ -57,7 +57,7 @@ const IndexLayout=() => {
         </header>
         <div 
             className={`fixed bottom-0 top-0 md:static
-            -left-52 ${closeMenu ? "translate-x-52 transition-transform duration-200 ease-out":"transition-transform duration-200 ease-out"} 
+            -left-72 ${closeMenu ? "translate-x-72 transition-transform duration-200 ease-out":"transition-transform duration-200 ease-out"} 
             rounded-r-lg shadow-2xl md:shadow-none bg-white md:bg-transparent z-40 p-3 space-y-5 pr-8 md:translate-x-0`}>
             <button className="md:hidden block" onClick={()=>setCloseMenu(!closeMenu)}><VscClose size={25} /></button>
             <nav className=" flex justify-center">
