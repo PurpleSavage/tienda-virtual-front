@@ -25,7 +25,7 @@ const ShoppingCart = ({steel}:{steel:Clothing}) => {
         </div>
         <div className="w-1/2 md:w-1/3 h-56 flex gap-2 relative">
           <button className=" absolute p-1 bg-gray-200 rounded-full top-1/2 z-50 -left-2 shadow-xl" onClick={()=>setStateCarousel(0)}><IoIosArrowBack size={20} /></button>
-          <img src={images[stateCarousel].url} className="w-full h-full " alt="imagen de ropa" />
+          <img src={images[stateCarousel].url ?images[stateCarousel].url:""} className="w-full h-full " alt="imagen de ropa" />
           <button className="absolute  p-1 bg-gray-200 rounded-full top-1/2 z-20 -right-2 shadow-xl" onClick={()=>setStateCarousel(1)}><IoIosArrowForward size={20} /></button>
         </div>
     </div>

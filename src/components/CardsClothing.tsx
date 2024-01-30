@@ -15,7 +15,7 @@ const CardsClothing = ({steel}:{steel:Clothing}) => {
       <div className="shadow-xl w-56 rounded-lg pb-5 bg-white px-4 py-4">
         <div className="w-full h-56 rounded-lg relative">
           <button className=" absolute p-1 bg-gray-200 rounded-full top-1/2 -left-2 shadow-xl" onClick={()=>setStateCarousel(0)}><IoIosArrowBack size={20} /></button>
-          <img src={images[stateCarousel].url} className="w-full h-full " alt="imagen de ropa" />
+          <img src={images[stateCarousel].url ?images[stateCarousel].url :"" } className="w-full h-full " alt="imagen de ropa" />
           <button className="absolute  p-1 bg-gray-200 rounded-full top-1/2  -right-2 shadow-xl" onClick={()=>setStateCarousel(1)}><IoIosArrowForward size={20} /></button> 
         </div>
         <h3 className="text-lg font-bold mt-2">{nombre}</h3>
