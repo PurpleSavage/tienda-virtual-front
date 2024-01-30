@@ -21,7 +21,7 @@ const CardsClothing = ({steel}:{steel:Clothing}) => {
         <h3 className="text-lg font-bold mt-2">{nombre}</h3>
         <p >{descripcion}</p>
         <div className="flex justify-between items-center">
-          <p>talla:{talla}</p>
+          <p>size:{talla}</p>
           <p className="text-green-800 font-bold">S/{precio}</p>
         </div>
         <button 
@@ -31,7 +31,7 @@ const CardsClothing = ({steel}:{steel:Clothing}) => {
           onMouseOver={()=>setTranslateAnimation(true)}
           onMouseOut={()=>setTranslateAnimation(false)}
           onClick={()=>clothingCart(steel)}
-        >Agregar
+        >Add
           <span 
             className={`${translateAnimation?"translate-x-1 transition-transform":" transition-transform"}`}
           ><IoIosArrowRoundForward size={25}/></span></button>

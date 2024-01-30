@@ -84,14 +84,14 @@ const IndexLayout=() => {
                             to="lowerwear" 
                             className={`font-bold hover:text-red-800 ${pathname==="/lowerwear"? "text-red-800 ":""}`}
                             onClick={()=>setCloseMenu(!closeMenu)}
-                        >Lowerwear</Link>
+                        >lower body</Link>
                     </li>
                     <li>
                         <Link 
                             to="upperwear" 
                             className={`font-bold hover:text-red-800 ${pathname==="/upperwear"? "text-red-800 ":""}`}
                             onClick={()=>setCloseMenu(!closeMenu)}
-                        >Upperwear</Link>
+                        >Upper body</Link>
                     </li>
                     <li>
                         <Link 

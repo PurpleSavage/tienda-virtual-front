@@ -27,7 +27,7 @@ const Cart = () => {
           />
         ))
         :
-        <p>Aún no agregaste nada al carrito</p>
+        <p>You haven't added anything to the cart yet</p>
       }
       <div className="shadow-2xl p-2 mt-4 rounded-lg  flex md:flex-row flex-col gap-4 py-2 justify-evenly items-center w-full md:w-2/3">
         <p className="text-lg font-semibold ">Total de artículos: {listCart.length}</p>

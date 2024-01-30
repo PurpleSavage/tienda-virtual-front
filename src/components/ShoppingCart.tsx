@@ -21,7 +21,7 @@ const ShoppingCart = ({steel}:{steel:Clothing}) => {
             <button 
               className="p-2 bg-red-600 text-white hover:bg-red-700 transition-colors rounded-md"
               onClick={sendIdRemoveCart}
-            >Quitar del carrito</button>
+            >Remove from cart.</button>
         </div>
         <div className="w-1/2 md:w-1/3 h-56 flex gap-2 relative">
           <button className=" absolute p-1 bg-gray-200 rounded-full top-1/2 z-50 -left-2 shadow-xl" onClick={()=>setStateCarousel(0)}><IoIosArrowBack size={20} /></button>

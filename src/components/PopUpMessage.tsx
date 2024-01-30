@@ -18,7 +18,7 @@ const PopUpMessage = ({msg}:{msg:MessageAlert}) => {
           <Link 
             to="cart"
             onClick={closeModal} 
-            className="px-4 py-1 text-md text-white rounded-md bg-red-600 hover:bg-red-700 transition-colors">Ir al carrito?</Link>
+            className="px-4 py-1 text-md text-white rounded-md bg-red-600 hover:bg-red-700 transition-colors">Go to cart</Link>
         </div>
       </section>
     </div>

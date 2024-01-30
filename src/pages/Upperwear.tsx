@@ -15,7 +15,7 @@ const Upperwear = () => {
               steel={steel}
               key={steel._id}
           />
-      )):<p>Aún no hay resultados en esta sección</p>
+      )):<p>There are still no results in this section.</p>
       }
     </>
   )
